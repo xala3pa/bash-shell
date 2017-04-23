@@ -24,7 +24,7 @@ To reference a variable: (A backslash "\" is used to escape special character)
 
 A backslash "\" is used to escape special character using `` (known as back-ticks) or with $() 
 
-FILELIST=`ls`
+FILELIST= \`ls\`
 
 FileWithTimeStamp=/tmp/my-dir/file_$(/bin/date +%Y-%m-%d).txt
 
