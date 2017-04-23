@@ -28,3 +28,18 @@ FILELIST= \`ls\`
 
 FileWithTimeStamp=/tmp/my-dir/file_$(/bin/date +%Y-%m-%d).txt
 
+## Passing Arguments to the Script
+
+To pass arguments is just writing them as space-delimited list following the script.
+
+$1 -> first argument in the command line
+
+$2 -> second argument in the command line
+
+...
+
+$0 -> references to the current script
+
+$# -> holds the number of arguments passed to the script
+
+$@ -> holds a space delimited string of all arguments passed to the script
