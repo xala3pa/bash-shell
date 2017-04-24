@@ -43,3 +43,15 @@ $0 -> references to the current script
 $# -> holds the number of arguments passed to the script
 
 $@ -> holds a space delimited string of all arguments passed to the script
+
+## Arrays
+
+An array is initialized by assign space-delimited values enclosed in ()
+
+  an_array=(golang groovylang java)
+
+All values in an array -> ${arrayname[@]}
+
+The total number of elements in the array is referenced by ${#arrayname[@]}
+
+The array elements can be accessed with their numeric index. The index of the first element is 0.
