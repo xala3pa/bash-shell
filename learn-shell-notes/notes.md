@@ -1,11 +1,11 @@
 # Learn Shell notes
 
 The first line of the shell script file begins with a "sha-bang" (#!), for example using Bash:
-  
+
   **#!/bin/bash**
-  
+
 You can fins out the currently active shell by executing:
-  
+
   **ps | grep $$**
 
 ## Variables
@@ -22,7 +22,7 @@ To reference a variable: (A backslash "\" is used to escape special character)
   1. $name
   2. ${name} -> avoid ambiguity
 
-A backslash "\" is used to escape special character using `` (known as back-ticks) or with $() 
+A backslash "\" is used to escape special character using `` (known as back-ticks) or with $()
 
 FILELIST= \`ls\`
 
@@ -43,3 +43,15 @@ $0 -> references to the current script
 $# -> holds the number of arguments passed to the script
 
 $@ -> holds a space delimited string of all arguments passed to the script
+
+## Arrays
+
+An array is initialized by assign space-delimited values enclosed in ()
+
+  an_array=(golang groovylang java)
+
+All values in an array -> ${arrayname[@]}
+
+The total number of elements in the array is referenced by ${#arrayname[@]}
+
+The array elements can be accessed with their numeric index. The index of the first element is 0.
