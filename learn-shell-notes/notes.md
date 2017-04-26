@@ -55,3 +55,53 @@ All values in an array -> ${arrayname[@]}
 The total number of elements in the array is referenced by ${#arrayname[@]}
 
 The array elements can be accessed with their numeric index. The index of the first element is 0.
+
+## Basic Operators
+
+Simple arithmetics on variables can be done using the arithmetic expression: $((expression))
+
+## Basic String Operations
+
+### String Length
+
+  ${#STRING}
+
+### Index
+
+Find the numerical position in $STRING of any single character in $SUBSTRING that matches. Note that the 'expr' command is used in this case.
+
+  expr index "$STRING" "$SUBSTRING"
+
+### Substring Extraction
+
+Extract substring of length $LEN from $STRING starting after position $POS. Note that first position is 0.
+
+  ${STRING:$POS:$LEN}
+
+If :$LEN is omitted, extract substring from $POS to end of line
+
+### Substring Replacement
+
+Replace first occurrence of substring with replacement (replace be for eat on the string)
+
+  ${STRING[@]/be/eat}
+
+Replace all occurrences of substring
+
+  ${STRING[@]//be/eat}
+
+Delete all occurrences of substring (replace with empty string)
+
+  ${STRING[@]// not/}
+
+Replace occurrence of substring if at the beginning of $STRING
+
+  ${STRING[@]/#to be/eat now}
+
+Replace occurrence of substring if at the end of $STRING
+
+   ${STRING[@]/%be/eat}
+
+Replace occurrence of substring with shell command output
+
+  ${STRING[@]/%be/be on $(date +%Y-%m-%d)}    # to be or not to be on 2012-06-14
